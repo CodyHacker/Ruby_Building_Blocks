@@ -16,17 +16,14 @@ def caesar_cipher(the_string, cipher_offset)
 end
 
 def cipherize(char, cipher_offset)
-
 	if char.downcase == char
-		index_number = Alpha_Lower.index(char) + cipher_offset
-		index_number -= Alpha_Lower.size if index_number > 25
-		return_char = Alpha_Lower[index_number]
+		the_Alpha = Alpha_Lower
 	else
-		index_number = Alpha_Upper.index(char) + cipher_offset
-		index_number -= Alpha_Upper.size if index_number > 25
-		return_char = Alpha_Upper[index_number]
+		the_Alpha = Alpha_Upper
 	end
-	return_char
+	index_number = the_Alpha.index(char) + cipher_offset
+	index_number -= the_Alpha.size if index_number > 25
+	return_char = the_Alpha[index_number]
 end
 
 
